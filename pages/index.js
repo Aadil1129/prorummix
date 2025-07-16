@@ -125,7 +125,7 @@ export default function Home() {
                   </ul>
                 </div>
                 <img
-                  src="/hero-game.jpg"
+                  src="/hero-game.png"
                   alt="Realtime Gaming"
                   className={styles.timelineStepImg}
                 />
