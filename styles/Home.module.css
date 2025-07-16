@@ -428,7 +428,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
-    padding: 1rem 1rem; /* Increased padding for mobile */
+    padding: 1rem 0.5rem; /* Increased padding for mobile */
   }
   .logo {
     margin-right: 0.7rem;
@@ -462,9 +462,9 @@
     padding-top: 90px;
   }
   .headerContent {
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
-    padding: 0.7rem 0.2rem;
+    padding: 0.7rem 0.5rem;
   }
   .logo {
     height: 38px; /* Increased size for small screens */
@@ -472,7 +472,7 @@
   }
   .heroSection {
     min-height: 60vh;
-    padding: 1.5rem 0.2rem;
+    padding: 1.5rem 1rem;
   }
   .heroLogo {
     width: 120px;
@@ -481,7 +481,7 @@
     font-size: 1.5rem;
   }
   .sectionCard {
-    padding: 1.2rem 0.2rem;
+    padding: 1.2rem 1.5rem;
   }
   .sectionImg {
     width: 90vw;
@@ -579,7 +579,7 @@
 .pageTitle {
   font-size: 2.2rem;
   font-weight: bold;
-  color: #1a1a40;
+  color: #8282cf;
   margin-bottom: 0.5rem;
   text-align: center;
   letter-spacing: 0.01em;
@@ -697,12 +697,12 @@
     padding: 0.9rem 0;
   }
   .sectionCard {
-    padding: 1.2rem 0.7rem;
+    padding: 1.2rem 1.5rem;
   }
 }
 @media (max-width: 600px) {
   .sectionCard {
-    padding: 0.7rem 0.2rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 0.7rem;
   }
   .pageTitle {
@@ -720,7 +720,7 @@
     padding: 0.6rem 0.4rem;
   }
   .sectionCard {
-    padding: 0.3rem 0.1rem;
+    padding: 0.3rem 1.5rem;
   }
 }
 
@@ -1096,7 +1096,7 @@
 }
 @media (max-width: 900px) {
   .timelineSection {
-    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+    padding: 1.2rem 1rem 1.2rem 1rem;
   }
   .timelineStepContent {
     flex-direction: column;
@@ -1272,4 +1272,18 @@
 /* Remove underline on hover */
 .menu a:hover::after {
   transform: translateX(-50%) scaleX(0);
+}
+@media (max-width: 600px) {
+  .downloadStepperSection {
+    margin: 2.5rem 1rem 1.5rem 1rem;
+  }
+  .downloadInstallSection {
+    margin: 2.5rem 1rem 1.5rem 1rem;
+  }
+  .sectionCard h2 {
+    font-size: 1.5rem;
+  }
+  .sectionCard p {
+    font-size: 0.9rem;
+  }
 }

@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 export default function Terms() {
   const router = useRouter();
   const [animateActive, setAnimateActive] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     setAnimateActive(true);
   }, [router.pathname]);
@@ -29,26 +31,38 @@ export default function Terms() {
       <header className={styles.headerFixed}>
         <div className={styles.headerContent}>
           <img src="/logo.png" alt="ProRummix Logo" className={styles.logo} />
-          <nav className={styles.menu}>
-            {menuItems.map((item) => {
-              const isActive = router.pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={
-                    isActive
-                      ? `${styles.activeMenu} activeMenu${
-                          animateActive ? " activeMenu-animate" : ""
-                        }`
-                      : ""
-                  }
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+            <nav className={menuOpen ? styles.menuOpen : styles.menu}>
+              {menuItems.map((item) => {
+                const isActive = router.pathname === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={
+                      isActive
+                        ? `${styles.activeMenu} activeMenu${
+                            animateActive ? " activeMenu-animate" : ""
+                          }`
+                        : ""
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
+          <button
+            className={styles.burger}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <span className={styles.burgerBar}></span>
+            <span className={styles.burgerBar}></span>
+            <span className={styles.burgerBar}></span>
+          </button>
         </div>
       </header>
       <main className={styles.mainBg}>
